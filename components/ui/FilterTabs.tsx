@@ -45,7 +45,7 @@ export function FilterTabs({
         role="group"
         aria-label={ariaLabel}
         aria-busy={pending}
-        className={`inline-flex max-w-full gap-1 overflow-x-auto rounded-full border border-primary/15 bg-white p-1 ${
+        className={`inline-flex max-w-full gap-1 overflow-x-auto rounded-full border border-primary/15 bg-surface p-1 ${
           pending ? "opacity-80" : ""
         }`}
       >
@@ -58,7 +58,7 @@ export function FilterTabs({
               aria-pressed={on}
               onClick={() => select(o.value)}
               className={`relative min-h-11 whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-                on ? "text-white" : "text-primary-dark hover:bg-primary/10"
+                on ? "text-white" : "text-heading hover:bg-primary/10"
               }`}
             >
               {on && (

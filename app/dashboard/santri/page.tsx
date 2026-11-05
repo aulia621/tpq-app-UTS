@@ -96,7 +96,7 @@ export default async function SantriPage({ searchParams }: { searchParams: Promi
       {rows.length === 0 ? (
         <EmptyState title={hasFilter ? "Tidak ada hasil" : "Belum ada data santri"}>
           {hasFilter ? (
-            <Link href="/dashboard/santri" className="font-semibold text-primary underline">
+            <Link href="/dashboard/santri" className="font-semibold text-accent underline">
               Reset pencarian
             </Link>
           ) : isAdmin ? (
@@ -110,7 +110,7 @@ export default async function SantriPage({ searchParams }: { searchParams: Promi
           {rows.map((s) => (
             <AnimatedItem key={s.id}>
               <div className="flex items-start justify-between gap-2">
-                <h2 className="min-w-0 break-words text-lg font-bold text-primary-dark">{s.nama}</h2>
+                <h2 className="min-w-0 wrap-break-word text-lg font-bold text-heading">{s.nama}</h2>
                 <Badge tone={s.aktif ? "primary" : "muted"}>{s.aktif ? "Aktif" : "Nonaktif"}</Badge>
               </div>
               <dl className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1 text-sm">

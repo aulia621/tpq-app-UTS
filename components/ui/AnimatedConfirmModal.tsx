@@ -104,14 +104,14 @@ export function AnimatedConfirmModal({
               animate="visible"
               exit="exit"
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-sm rounded-card border border-primary/10 bg-white p-6 shadow-xl"
+              className="relative w-full max-w-sm rounded-card border border-primary/10 bg-surface p-6 shadow-xl"
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-full bg-danger/10 text-danger">
                 <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <h2 id={titleId} className="mt-4 text-lg font-bold text-primary-dark">
+              <h2 id={titleId} className="mt-4 text-lg font-bold text-heading">
                 {title}
               </h2>
               <p id={descId} className="mt-2 wrap-break-word text-sm text-ink/70">
@@ -122,14 +122,14 @@ export function AnimatedConfirmModal({
                   ref={cancelRef}
                   type="button"
                   onClick={onClose}
-                  className="min-h-11 rounded-xl border border-primary px-4 text-sm font-semibold text-primary hover:bg-primary/10"
+                  className="min-h-11 rounded-xl border border-primary px-4 text-sm font-semibold text-accent hover:bg-primary/10"
                 >
                   {cancelLabel}
                 </button>
                 <button
                   type="button"
                   onClick={onConfirm}
-                  className="min-h-11 rounded-xl bg-danger px-4 text-sm font-semibold text-white hover:brightness-90"
+                  className="min-h-11 rounded-xl bg-danger-solid px-4 text-sm font-semibold text-white hover:brightness-90"
                 >
                   {confirmLabel}
                 </button>

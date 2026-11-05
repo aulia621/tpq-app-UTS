@@ -19,9 +19,9 @@ export function HafalanForm({ santriList }: { santriList: { id: string; nama: st
       key={state.status === "success" ? state.ts : "form"}
       action={formAction}
       noValidate
-      className="space-y-4 rounded-card border border-primary/10 bg-white p-5 shadow-sm"
+      className="space-y-4 rounded-card border border-primary/10 bg-surface p-5 shadow-sm"
     >
-      <h2 className="text-lg font-bold text-primary-dark">Catat Hafalan / Mengaji</h2>
+      <h2 className="text-lg font-bold text-heading">Catat Hafalan / Mengaji</h2>
       <div className="grid gap-4 md:grid-cols-2">
         <SelectField label="Santri" name="santri_id" defaultValue={v.santri_id ?? ""} error={fe.santri_id} required>
           <option value="">Pilih santri</option>

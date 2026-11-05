@@ -29,9 +29,9 @@ export default async function PenggunaPage() {
       ) : (
         <ul className="space-y-3">
           {users.map((u) => (
-            <li key={u.id} className="flex flex-wrap items-center justify-between gap-3 rounded-card border border-primary/10 bg-white p-4 shadow-sm">
+            <li key={u.id} className="flex flex-wrap items-center justify-between gap-3 rounded-card border border-primary/10 bg-surface p-4 shadow-sm">
               <div className="min-w-0">
-                <p className="break-words font-semibold text-primary-dark">{u.full_name || "(tanpa nama)"}</p>
+                <p className="wrap-break-word font-semibold text-heading">{u.full_name || "(tanpa nama)"}</p>
                 <p className="break-all text-sm text-ink/70">{u.email ?? "-"}</p>
                 <p className="text-xs text-ink/50">Bergabung {formatTanggal(u.created_at)}</p>
               </div>

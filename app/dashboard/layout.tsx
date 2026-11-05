@@ -3,6 +3,7 @@ import { MotionProvider } from "@/components/motion/MotionProvider";
 import { NavLinks } from "@/components/layout/NavLinks";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { SignOutButton } from "@/components/layout/SignOutButton";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { getProfile, getUser } from "@/lib/auth/session";
 import { MENU } from "@/lib/nav";
 import { initials } from "@/lib/query";
@@ -17,8 +18,8 @@ export default async function DashboardLayout({ children }: { children: React.Re
   if (!profile) {
     return (
       <main className="flex min-h-screen items-center justify-center p-6">
-        <div className="max-w-md rounded-card border border-primary/10 bg-white p-8 text-center shadow">
-          <h1 className="text-xl font-bold text-primary-dark">Profil belum tersedia</h1>
+        <div className="max-w-md rounded-card border border-primary/10 bg-surface p-8 text-center shadow">
+          <h1 className="text-xl font-bold text-heading">Profil belum tersedia</h1>
           <p className="mt-2 text-sm text-ink/70">
             Akunmu sudah masuk, tetapi profilnya belum dibuat. Hubungi admin atau coba keluar lalu masuk lagi.
           </p>
@@ -37,13 +38,14 @@ export default async function DashboardLayout({ children }: { children: React.Re
       <div className="flex min-h-screen">
         <Sidebar role={profile.role} fullName={name} />
         <div className="flex min-w-0 flex-1 flex-col">
-          <header className="sticky top-0 z-30 border-b border-primary/10 bg-white/70 backdrop-blur-md">
+          <header className="sticky top-0 z-30 border-b border-primary/10 bg-surface/70 backdrop-blur-md">
             <div className="flex items-center justify-between gap-3 px-4 py-2 md:px-8">
-              <p className="text-base font-bold text-primary-dark md:hidden">TPQ Nurul Iman</p>
+              <p className="text-base font-bold text-heading md:hidden">TPQ Nurul Iman</p>
               <p className="hidden text-sm text-ink/70 md:block">Sistem Informasi TPQ</p>
               <div className="flex items-center gap-2">
-                <span className="hidden text-sm font-semibold text-primary-dark sm:inline">{name}</span>
-                <span className="rounded-full bg-gold/25 px-2 py-0.5 text-xs font-semibold text-primary-dark">
+                <ThemeToggle />
+                <span className="hidden text-sm font-semibold text-heading sm:inline">{name}</span>
+                <span className="rounded-full bg-gold/25 px-2 py-0.5 text-xs font-semibold text-heading">
                   {ROLE_LABEL[profile.role]}
                 </span>
                 <span
@@ -53,7 +55,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
                   {initials(name)}
                 </span>
                 <div className="md:hidden">
-                  <SignOutButton className="text-primary-dark hover:bg-primary/10" />
+                  <SignOutButton className="text-heading hover:bg-primary/10" />
                 </div>
               </div>
             </div>

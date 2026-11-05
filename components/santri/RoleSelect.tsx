@@ -19,7 +19,7 @@ export function RoleSelect({ id, role, disabled }: { id: string; role: UserRole;
         name="role"
         defaultValue={role}
         disabled={disabled}
-        className="min-h-11 rounded-xl border border-primary/25 bg-white px-3 text-sm disabled:opacity-60"
+        className="min-h-11 rounded-xl border border-primary/25 bg-surface px-3 text-sm disabled:opacity-60"
       >
         {ROLE_LIST.map((r) => (
           <option key={r} value={r}>

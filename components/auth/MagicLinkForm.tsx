@@ -37,7 +37,7 @@ function Inner({ next, onReset }: { next: string; onReset: () => void }) {
     <form action={formAction} className="space-y-4" noValidate>
       <input type="hidden" name="next" value={next} />
       <div className="flex items-center gap-2">
-        <svg viewBox="0 0 24 24" className="h-5 w-5 text-primary" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+        <svg viewBox="0 0 24 24" className="h-5 w-5 text-accent" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
           <path d="M4 6h16v12H4zM4 7l8 6 8-6" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
         <p className="text-sm text-ink/70">Masuk tanpa password lewat tautan yang kami kirim ke email.</p>

@@ -2,8 +2,8 @@
 export const buttonVariants = {
   primary: "bg-primary text-white hover:bg-primary-dark",
   gold: "bg-gold text-primary-dark hover:brightness-95",
-  outline: "border border-primary text-primary hover:bg-primary/10",
-  danger: "bg-danger text-white hover:brightness-90",
+  outline: "border border-primary text-accent hover:bg-primary/10",
+  danger: "bg-danger-solid text-white hover:brightness-90",
 } as const;
 
 export type ButtonVariant = keyof typeof buttonVariants;

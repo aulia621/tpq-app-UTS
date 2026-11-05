@@ -52,14 +52,14 @@ export default async function PerkembanganPage() {
           return (
             <section key={a.id} aria-labelledby={`anak-${a.id}`} className="space-y-4">
               <div className="flex flex-wrap items-center gap-2">
-                <h2 id={`anak-${a.id}`} className="text-xl font-bold text-primary-dark">
+                <h2 id={`anak-${a.id}`} className="text-xl font-bold text-heading">
                   {a.nama}
                 </h2>
                 <Badge tone="primary">{a.kelas?.nama ?? "Belum ada kelas"}</Badge>
                 {!a.aktif && <Badge tone="muted">Nonaktif</Badge>}
               </div>
               <Card>
-                <h3 className="mb-3 font-bold text-primary-dark">Grafik nilai</h3>
+                <h3 className="mb-3 font-bold text-heading">Grafik nilai</h3>
                 <ProgresChart data={chart} />
               </Card>
               {rows.length === 0 ? (

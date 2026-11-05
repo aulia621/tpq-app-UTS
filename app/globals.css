@@ -1,14 +1,51 @@
 @import "tailwindcss";
 
+/* Mode gelap dikendalikan lewat class "dark" pada <html> (bukan hanya media query),
+   supaya pengguna bisa memilih manual. Lihat components/theme/. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Nilai warna per tema. Komponen memakai nama token (bg-surface, text-heading, dst.),
+   jadi cukup ubah di sini untuk mengganti tampilan. */
+:root {
+  --primary: #047857;
+  --primary-dark: #064e3b;
+  --gold: #d9a441;
+  --page: #fffbeb; /* latar halaman */
+  --surface: #ffffff; /* kartu, form, header */
+  --ink: #1f2937; /* teks isi */
+  --heading: #064e3b; /* judul */
+  --accent: #047857; /* tautan & angka penting */
+  --success: #15803d;
+  --warning: #b45309;
+  --danger: #b91c1c;
+  --danger-solid: #b91c1c; /* latar tombol bahaya (selalu gelap agar teks putih terbaca) */
+}
+
+.dark {
+  --page: #0b1512;
+  --surface: #13221d;
+  --ink: #e5e7eb;
+  --heading: #a7f3d0;
+  --accent: #34d399;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+}
+
 @theme inline {
-  --color-primary: #047857;
-  --color-primary-dark: #064e3b;
-  --color-gold: #d9a441;
-  --color-cream: #fffbeb;
-  --color-ink: #1f2937;
-  --color-success: #15803d;
-  --color-warning: #b45309;
-  --color-danger: #b91c1c;
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-gold: var(--gold);
+  --color-cream: #fffbeb; /* tetap krem: dipakai di atas latar hijau (halaman login) */
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-heading: var(--heading);
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-danger-solid: var(--danger-solid);
   --radius-card: 1rem;
   --font-sans: "Plus Jakarta Sans Variable", ui-sans-serif, system-ui, sans-serif;
   --font-arab: "Amiri", "Noto Naskh Arabic", serif;
@@ -16,6 +53,10 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+html.dark {
+  color-scheme: dark; /* scrollbar & kontrol form bawaan ikut gelap */
 }
 
 body {

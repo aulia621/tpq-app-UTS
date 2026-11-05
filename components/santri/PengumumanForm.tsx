@@ -18,9 +18,9 @@ export function PengumumanForm({ kelasList }: { kelasList: { id: string; nama: s
       key={state.status === "success" ? state.ts : "form"}
       action={formAction}
       noValidate
-      className="space-y-4 rounded-card border border-primary/10 bg-white p-5 shadow-sm"
+      className="space-y-4 rounded-card border border-primary/10 bg-surface p-5 shadow-sm"
     >
-      <h2 className="text-lg font-bold text-primary-dark">Buat Pengumuman</h2>
+      <h2 className="text-lg font-bold text-heading">Buat Pengumuman</h2>
       <Field label="Judul" name="judul" defaultValue={v.judul} error={fe.judul} maxLength={120} required />
       <TextAreaField label="Isi pengumuman" name="isi" rows={4} maxLength={2000} defaultValue={v.isi} error={fe.isi} required />
       <SelectField label="Ditujukan untuk" name="target_kelas_id" defaultValue={v.target_kelas_id ?? ""} error={fe.target_kelas_id}>

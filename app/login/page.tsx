@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { UnifiedAuthCard } from "@/components/auth/UnifiedAuthCard";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { getUser } from "@/lib/auth/session";
 import { sanitizeNext } from "@/lib/auth/safeNext";
 import { first, type RawParams } from "@/lib/query";
@@ -30,6 +31,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-linear-to-br from-primary-dark via-primary to-primary-dark p-4">
       <div aria-hidden="true" className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-gold/30 blur-3xl" />
       <div aria-hidden="true" className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-cream/20 blur-3xl" />
+      <ThemeToggle className="absolute top-4 right-4 z-10" />
       <div className="relative flex w-full flex-col items-center gap-4">
         <UnifiedAuthCard next={next} errorMessage={errorMessage} initialMode={initialMode} />
         <Link href="/" className="inline-flex min-h-11 items-center text-sm font-semibold text-cream underline">

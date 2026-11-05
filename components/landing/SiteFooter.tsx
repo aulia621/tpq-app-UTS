@@ -62,8 +62,8 @@ export function SiteFooter({ configured, connected }: { configured: boolean; con
   return (
     <>
       {/* Gelombang pemisah */}
-      <div aria-hidden="true" className="bg-cream leading-none">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="block h-12 w-full text-primary-dark sm:h-16">
+      <div aria-hidden="true" className="bg-page leading-none">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="block h-12 w-full text-heading sm:h-16">
           <path fill="currentColor" d="M0 44C200 4 420 84 720 44s520-40 720 0V80H0z" />
         </svg>
       </div>

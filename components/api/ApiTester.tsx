@@ -44,9 +44,9 @@ function tokenize(json: string): React.ReactNode[] {
     const idx = m.index ?? 0;
     if (idx > last) out.push(json.slice(last, idx));
     const tok = m[0];
-    let cls = "text-amber-700";
-    if (tok.startsWith('"')) cls = m[2] ? "text-primary-dark font-semibold" : "text-emerald-700";
-    else if (/true|false|null/.test(tok)) cls = "text-purple-700";
+    let cls = "text-amber-700 dark:text-amber-400";
+    if (tok.startsWith('"')) cls = m[2] ? "text-heading font-semibold" : "text-emerald-700 dark:text-emerald-300";
+    else if (/true|false|null/.test(tok)) cls = "text-purple-700 dark:text-purple-300";
     out.push(
       <span key={i++} className={cls}>
         {tok}
@@ -136,7 +136,7 @@ export function ApiTester() {
     }
   }
 
-  const input = "min-h-11 w-full rounded-xl border border-primary/25 bg-white px-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40";
+  const input = "min-h-11 w-full rounded-xl border border-primary/25 bg-surface px-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40";
 
   return (
     <div className="space-y-4">
@@ -157,14 +157,14 @@ export function ApiTester() {
         ))}
       </div>
 
-      <div role="group" aria-label="Method HTTP" className="inline-flex gap-1 rounded-full border border-primary/15 bg-white p-1">
+      <div role="group" aria-label="Method HTTP" className="inline-flex gap-1 rounded-full border border-primary/15 bg-surface p-1">
         {METHODS.map((m) => (
           <button
             key={m}
             type="button"
             aria-pressed={method === m}
             onClick={() => setMethod(m)}
-            className={`min-h-11 rounded-full px-4 text-sm font-bold ${method === m ? "bg-primary text-white" : "text-primary-dark hover:bg-primary/10"}`}
+            className={`min-h-11 rounded-full px-4 text-sm font-bold ${method === m ? "bg-primary text-white" : "text-heading hover:bg-primary/10"}`}
           >
             {m}
           </button>
@@ -172,14 +172,14 @@ export function ApiTester() {
       </div>
 
       <div>
-        <label htmlFor="api-path" className="mb-1 block text-sm font-semibold text-primary-dark">
+        <label htmlFor="api-path" className="mb-1 block text-sm font-semibold text-heading">
           Endpoint
         </label>
         <input id="api-path" value={path} onChange={(e) => setPath(e.target.value)} className={input} spellCheck={false} />
       </div>
 
       <div>
-        <label htmlFor="api-token" className="mb-1 block text-sm font-semibold text-primary-dark">
+        <label htmlFor="api-token" className="mb-1 block text-sm font-semibold text-heading">
           Bearer token
         </label>
         <div className="flex flex-wrap gap-2">
@@ -209,7 +209,7 @@ export function ApiTester() {
 
       {(method === "POST" || method === "PUT") && (
         <div>
-          <label htmlFor="api-body" className="mb-1 block text-sm font-semibold text-primary-dark">
+          <label htmlFor="api-body" className="mb-1 block text-sm font-semibold text-heading">
             Request body (JSON)
           </label>
           <textarea
@@ -218,7 +218,7 @@ export function ApiTester() {
             value={body}
             onChange={(e) => setBody(e.target.value)}
             spellCheck={false}
-            className="w-full rounded-xl border border-primary/25 bg-white p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+            className="w-full rounded-xl border border-primary/25 bg-surface p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
           />
         </div>
       )}
@@ -229,7 +229,7 @@ export function ApiTester() {
       </button>
 
       {result && (
-        <section aria-label="Respons" className="space-y-2 rounded-card border border-primary/10 bg-white p-4">
+        <section aria-label="Respons" className="space-y-2 rounded-card border border-primary/10 bg-surface p-4">
           {"error" in result ? (
             <p role="alert" className="text-sm font-medium text-danger">
               {result.error}
@@ -241,7 +241,7 @@ export function ApiTester() {
                 <span className="text-ink/70">{result.ms} ms</span>
                 <span className="break-all text-xs text-ink/60">{result.contentType}</span>
               </div>
-              <pre className="max-h-96 overflow-auto rounded-xl bg-cream p-3 text-xs leading-relaxed whitespace-pre-wrap break-words">
+              <pre className="max-h-96 overflow-auto rounded-xl bg-page p-3 text-xs leading-relaxed whitespace-pre-wrap wrap-break-word">
                 <code>{pretty}</code>
               </pre>
             </>

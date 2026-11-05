@@ -29,7 +29,7 @@ export function SearchInput({ placeholder, label }: { placeholder: string; label
         defaultValue={searchParams.get("search") ?? ""}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="min-h-11 w-full rounded-xl border border-primary/25 bg-white px-4 text-base placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-primary/40"
+        className="min-h-11 w-full rounded-xl border border-primary/25 bg-surface px-4 text-base placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-primary/40"
       />
     </div>
   );

@@ -39,7 +39,7 @@ export default async function KelasPage() {
         <AnimatedList listKey="kelas">
           {kelas.map((k) => (
             <AnimatedItem key={k.id}>
-              <h2 className="text-lg font-bold text-primary-dark">{k.nama}</h2>
+              <h2 className="text-lg font-bold text-heading">{k.nama}</h2>
               <p className="mt-1 text-sm text-ink/70">
                 {jumlah.get(k.id) ?? 0} santri • Guru: {k.guru_id ? (guruNama.get(k.guru_id) ?? "-") : "belum ditentukan"}
               </p>

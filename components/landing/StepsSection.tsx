@@ -22,9 +22,9 @@ export function StepsSection() {
             >
               {i + 1}
             </span>
-            <div className="min-w-0 flex-1 rounded-card border border-primary/10 bg-white p-5 shadow-sm">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">{s.label}</p>
-              <h3 className="mt-1 text-lg font-bold text-primary-dark">{s.title}</h3>
+            <div className="min-w-0 flex-1 rounded-card border border-primary/10 bg-surface p-5 shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">{s.label}</p>
+              <h3 className="mt-1 text-lg font-bold text-heading">{s.title}</h3>
               <p className="mt-2 text-sm text-ink/75">{s.text}</p>
             </div>
           </li>

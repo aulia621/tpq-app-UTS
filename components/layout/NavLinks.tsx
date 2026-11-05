@@ -18,7 +18,7 @@ export function NavLinks({ items, variant }: { items: NavItem[]; variant: "sideb
               href={i.href}
               aria-current={isActive(i.href) ? "page" : undefined}
               className={`inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold whitespace-nowrap ${
-                isActive(i.href) ? "bg-primary text-white" : "bg-white text-primary-dark border border-primary/15"
+                isActive(i.href) ? "bg-primary text-white" : "bg-surface text-heading border border-primary/15"
               }`}
             >
               {i.label}

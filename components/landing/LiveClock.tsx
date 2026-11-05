@@ -44,11 +44,11 @@ export function LiveClock() {
       aria-live="off"
       className="inline-flex items-center gap-3 rounded-full border border-primary/25 bg-primary/5 px-4 py-1.5"
     >
-      <svg viewBox="0 0 24 24" className="h-4 w-4 text-primary" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <svg viewBox="0 0 24 24" className="h-4 w-4 text-accent" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
         <circle cx="12" cy="12" r="9" />
         <path d="M12 7v5l3 2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
-      <span className="font-bold tabular-nums text-primary">{time}</span>
+      <span className="font-bold tabular-nums text-accent">{time}</span>
       {date && (
         <>
           <span aria-hidden="true" className="h-4 w-px bg-primary/25" />

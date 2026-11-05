@@ -81,7 +81,7 @@ export default async function HafalanPage({ searchParams }: { searchParams: Prom
           <p className="text-sm text-ink/80">
             Belum ada santri aktif.{" "}
             {profile.role === "admin" ? (
-              <Link href="/dashboard/santri/baru" className="font-semibold text-primary underline">
+              <Link href="/dashboard/santri/baru" className="font-semibold text-accent underline">
                 Tambahkan santri dulu
               </Link>
             ) : (
@@ -118,7 +118,7 @@ export default async function HafalanPage({ searchParams }: { searchParams: Prom
       {rows.length === 0 ? (
         <EmptyState title={hasFilter ? "Tidak ada hasil" : "Belum ada catatan hafalan"}>
           {hasFilter ? (
-            <Link href="/dashboard/hafalan" className="font-semibold text-primary underline">
+            <Link href="/dashboard/hafalan" className="font-semibold text-accent underline">
               Reset pencarian
             </Link>
           ) : (

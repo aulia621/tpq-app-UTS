@@ -16,7 +16,7 @@ export function ProfileSection() {
         {PROFILE_CARDS.map((c) => (
           <li
             key={c.title}
-            className="overflow-hidden rounded-card border border-primary/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            className="overflow-hidden rounded-card border border-primary/10 bg-surface shadow-sm transition hover:-translate-y-1 hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0"
           >
             <div className="relative flex h-44 items-center justify-center bg-linear-to-br from-primary-dark to-primary">
               {c.image ? (
@@ -26,7 +26,7 @@ export function ProfileSection() {
               )}
             </div>
             <div className="p-5">
-              <h3 className="text-lg font-bold text-primary-dark">{c.title}</h3>
+              <h3 className="text-lg font-bold text-heading">{c.title}</h3>
               <p className="mt-2 text-sm text-ink/75">{c.text}</p>
             </div>
           </li>

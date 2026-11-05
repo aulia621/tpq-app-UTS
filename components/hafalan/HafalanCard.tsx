@@ -22,22 +22,22 @@ export function HafalanCard({
         {showSantri ? (
           <Link
             href={`/dashboard/santri/${item.santri_id}`}
-            className="min-w-0 break-words font-bold text-primary-dark underline-offset-2 hover:underline"
+            className="min-w-0 wrap-break-word font-bold text-heading underline-offset-2 hover:underline"
           >
             {nama}
           </Link>
         ) : (
-          <span className="font-semibold text-primary-dark">{formatTanggal(item.tanggal)}</span>
+          <span className="font-semibold text-heading">{formatTanggal(item.tanggal)}</span>
         )}
         {showSantri && <span className="shrink-0 text-xs text-ink/60">{formatTanggal(item.tanggal)}</span>}
       </div>
       <div className="mt-2">
         <Badge tone="muted">{JENIS_LABEL[item.jenis]}</Badge>
       </div>
-      <p dir="auto" className="mt-3 break-words font-arab text-2xl leading-relaxed text-primary-dark">
+      <p dir="auto" className="mt-3 wrap-break-word font-arab text-2xl leading-relaxed text-heading">
         {item.materi}
       </p>
-      {item.catatan && <p className="mt-1 break-words text-sm text-ink/70">{item.catatan}</p>}
+      {item.catatan && <p className="mt-1 wrap-break-word text-sm text-ink/70">{item.catatan}</p>}
       <div className="mt-3 flex flex-wrap items-center gap-2">
         <span className="text-sm font-semibold text-ink">Nilai {item.nilai ?? "-"}</span>
         <StatusBadge status={item.status} />

@@ -46,14 +46,14 @@ export default async function PengumumanPage() {
             return (
               <AnimatedItem key={p.id}>
                 <div className="flex flex-wrap items-start justify-between gap-2">
-                  <h2 className="min-w-0 break-words text-lg font-bold text-primary-dark">{p.judul}</h2>
+                  <h2 className="min-w-0 wrap-break-word text-lg font-bold text-heading">{p.judul}</h2>
                   <div className="flex items-center gap-2">
                     {baru && <Badge tone="gold">Baru</Badge>}
                     <span className="text-xs text-ink/60">{formatTanggal(p.created_at)}</span>
                   </div>
                 </div>
                 <p className="mt-1 text-xs text-ink/60">{p.kelas ? `Kelas ${p.kelas.nama}` : "Untuk semua kelas"}</p>
-                <p className="mt-3 whitespace-pre-line break-words text-sm text-ink/90">{p.isi}</p>
+                <p className="mt-3 whitespace-pre-line wrap-break-word text-sm text-ink/90">{p.isi}</p>
                 {canDelete && canCreate && (
                   <div className="mt-3">
                     <ConfirmDeleteButton

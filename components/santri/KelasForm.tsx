@@ -18,9 +18,9 @@ export function KelasForm({ guruList }: { guruList: { id: string; full_name: str
       key={state.status === "success" ? state.ts : "form"}
       action={formAction}
       noValidate
-      className="space-y-4 rounded-card border border-primary/10 bg-white p-5 shadow-sm"
+      className="space-y-4 rounded-card border border-primary/10 bg-surface p-5 shadow-sm"
     >
-      <h2 className="text-lg font-bold text-primary-dark">Tambah Kelas</h2>
+      <h2 className="text-lg font-bold text-heading">Tambah Kelas</h2>
       <div className="grid gap-4 md:grid-cols-2">
         <Field label="Nama kelas" name="nama" placeholder="Contoh: Iqro 1" defaultValue={v.nama} error={fe.nama} maxLength={50} required />
         <SelectField label="Guru pengampu (opsional)" name="guru_id" defaultValue={v.guru_id ?? ""} error={fe.guru_id}>

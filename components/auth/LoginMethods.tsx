@@ -45,7 +45,7 @@ export function LoginMethods({ next, initialMode = "login" }: { next: string; in
               onClick={() => setActive(t.id)}
               onKeyDown={(e) => onKeyDown(e, i)}
               className={`min-h-11 rounded-lg px-2 text-sm font-semibold transition-colors ${
-                on ? "bg-primary text-white shadow" : "text-primary-dark hover:bg-white/60"
+                on ? "bg-primary text-white shadow" : "text-heading hover:bg-surface/60"
               }`}
             >
               {t.label}

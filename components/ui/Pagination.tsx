@@ -15,7 +15,7 @@ export function Pagination({
   if (totalPages <= 1) return null;
   const href = (p: number) => `${basePath}${qs({ ...params, page: p > 1 ? String(p) : undefined })}`;
   const linkCls =
-    "inline-flex min-h-11 items-center rounded-xl border border-primary/25 bg-white px-4 text-sm font-semibold text-primary-dark hover:bg-primary/10";
+    "inline-flex min-h-11 items-center rounded-xl border border-primary/25 bg-surface px-4 text-sm font-semibold text-heading hover:bg-primary/10";
   const offCls =
     "inline-flex min-h-11 items-center rounded-xl border border-ink/10 bg-ink/5 px-4 text-sm font-semibold text-ink/40";
 

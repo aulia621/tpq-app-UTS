@@ -4,13 +4,14 @@ import { Logo } from "@/components/landing/Logo";
 import { initials } from "@/lib/query";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 import { ROLE_LABEL, type UserRole } from "@/lib/types";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { SignOutButton } from "./SignOutButton";
 
 export type NavbarUser = { displayName: string; role?: UserRole } | null;
 
 export function SiteNavbar({ user }: { user: NavbarUser }) {
   return (
-    <header className="sticky top-0 z-40 border-b border-primary/10 bg-white/90 shadow-sm backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-primary/10 bg-surface/90 shadow-sm backdrop-blur-md">
       <nav
         aria-label="Navigasi situs"
         className="relative mx-auto flex h-18 max-w-7xl items-center justify-between gap-3 px-4"
@@ -18,7 +19,7 @@ export function SiteNavbar({ user }: { user: NavbarUser }) {
         <Link href="/" className="flex min-h-11 items-center gap-2.5" aria-label={`${SITE_NAME}, beranda`}>
           <Logo className="h-10 w-10 shrink-0" />
           <span className="hidden leading-tight sm:block">
-            <span className="block text-sm font-extrabold text-primary-dark">{SITE_NAME}</span>
+            <span className="block text-sm font-extrabold text-heading">{SITE_NAME}</span>
             <span className="block text-[11px] font-medium text-ink/60">{SITE_TAGLINE}</span>
           </span>
         </Link>
@@ -29,17 +30,18 @@ export function SiteNavbar({ user }: { user: NavbarUser }) {
 
         {user ? (
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <span
               aria-hidden="true"
               className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-white"
             >
               {initials(user.displayName)}
             </span>
-            <span className="hidden max-w-40 truncate text-sm font-semibold text-primary-dark lg:inline">
+            <span className="hidden max-w-40 truncate text-sm font-semibold text-heading lg:inline">
               {user.displayName}
             </span>
             {user.role && (
-              <span className="hidden rounded-full bg-gold/25 px-2 py-0.5 text-xs font-semibold text-primary-dark lg:inline">
+              <span className="hidden rounded-full bg-gold/25 px-2 py-0.5 text-xs font-semibold text-heading lg:inline">
                 {ROLE_LABEL[user.role]}
               </span>
             )}
@@ -49,13 +51,14 @@ export function SiteNavbar({ user }: { user: NavbarUser }) {
             >
               Dashboard
             </Link>
-            <SignOutButton className="text-primary-dark hover:bg-primary/10" />
+            <SignOutButton className="text-heading hover:bg-primary/10" />
           </div>
         ) : (
           <div className="flex items-center gap-1 sm:gap-3">
+            <ThemeToggle />
             <Link
               href="/login"
-              className="inline-flex min-h-11 items-center rounded-lg px-3 text-sm font-semibold text-primary hover:bg-primary/10"
+              className="inline-flex min-h-11 items-center rounded-lg px-3 text-sm font-semibold text-accent hover:bg-primary/10"
             >
               Masuk
             </Link>

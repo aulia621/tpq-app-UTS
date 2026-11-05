@@ -36,7 +36,7 @@ export function SantriForm({
   const val = (k: keyof SantriInitial) => v[k as string] ?? (santri?.[k] as string | undefined) ?? "";
 
   return (
-    <form action={formAction} noValidate className="max-w-xl space-y-4 rounded-card border border-primary/10 bg-white p-5 shadow-sm">
+    <form action={formAction} noValidate className="max-w-xl space-y-4 rounded-card border border-primary/10 bg-surface p-5 shadow-sm">
       {isEdit && <input type="hidden" name="id" value={santri?.id} />}
       <Field label="Nama santri" name="nama" defaultValue={val("nama")} error={fe.nama} maxLength={100} required />
       <div className="grid gap-4 sm:grid-cols-2">

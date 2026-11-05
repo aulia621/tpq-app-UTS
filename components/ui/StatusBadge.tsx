@@ -22,8 +22,8 @@ export function Badge({
   tone?: "primary" | "gold" | "muted" | "danger";
 }) {
   const tones = {
-    primary: "bg-primary/10 text-primary-dark",
-    gold: "bg-gold/25 text-primary-dark",
+    primary: "bg-primary/10 text-heading",
+    gold: "bg-gold/25 text-heading",
     muted: "bg-ink/10 text-ink/80",
     danger: "bg-danger/10 text-danger",
   } as const;

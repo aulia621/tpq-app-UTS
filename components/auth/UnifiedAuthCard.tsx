@@ -13,9 +13,9 @@ export function UnifiedAuthCard({
   initialMode?: "login" | "register";
 }) {
   return (
-    <div className="w-full max-w-md rounded-card border border-white/40 bg-white/85 p-6 shadow-xl backdrop-blur-md transition">
+    <div className="w-full max-w-md rounded-card border border-white/40 dark:border-white/10 bg-surface/85 p-6 shadow-xl backdrop-blur-md transition">
       <div className="mb-5 text-center">
-        <h1 className="text-2xl font-bold text-primary-dark">{SITE_NAME}</h1>
+        <h1 className="text-2xl font-bold text-heading">{SITE_NAME}</h1>
         <p className="mt-1 text-sm text-ink/70">Masuk untuk melanjutkan</p>
       </div>
 
@@ -26,7 +26,7 @@ export function UnifiedAuthCard({
       )}
 
       <div className="space-y-2">
-        <p className="text-center text-xs font-semibold uppercase tracking-wide text-primary">Login 1-klik</p>
+        <p className="text-center text-xs font-semibold uppercase tracking-wide text-accent">Login 1-klik</p>
         <GithubLoginButton next={next} />
       </div>
 

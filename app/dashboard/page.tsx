@@ -33,8 +33,8 @@ function PengumumanCard({ items }: { items: Pengumuman[] }) {
   return (
     <Card>
       <div className="mb-3 flex items-center justify-between">
-        <h2 className="font-bold text-primary-dark">Pengumuman terbaru</h2>
-        <Link href="/dashboard/pengumuman" className="text-sm font-semibold text-primary underline">
+        <h2 className="font-bold text-heading">Pengumuman terbaru</h2>
+        <Link href="/dashboard/pengumuman" className="text-sm font-semibold text-accent underline">
           Lihat semua
         </Link>
       </div>
@@ -44,7 +44,7 @@ function PengumumanCard({ items }: { items: Pengumuman[] }) {
         <ul className="divide-y divide-primary/10">
           {items.map((p) => (
             <li key={p.id} className="flex justify-between gap-3 py-2 text-sm">
-              <span className="min-w-0 break-words">{p.judul}</span>
+              <span className="min-w-0 wrap-break-word">{p.judul}</span>
               <span className="shrink-0 text-xs text-ink/60">{formatTanggal(p.created_at)}</span>
             </li>
           ))}
@@ -109,14 +109,14 @@ export default async function DashboardPage() {
           <Link href="/dashboard/hafalan" className={buttonClass("primary")}>Catat hafalan</Link>
         </div>
         <Card>
-          <h2 className="mb-3 font-bold text-primary-dark">Santri</h2>
+          <h2 className="mb-3 font-bold text-heading">Santri</h2>
           {santri.length === 0 ? (
             <p className="text-sm text-ink/70">Belum ada santri aktif.</p>
           ) : (
             <ul className="divide-y divide-primary/10">
               {santri.map((s) => (
                 <li key={s.id} className="flex justify-between gap-3 py-2 text-sm">
-                  <Link href={`/dashboard/santri/${s.id}`} className="font-medium text-primary underline">
+                  <Link href={`/dashboard/santri/${s.id}`} className="font-medium text-accent underline">
                     {s.nama}
                   </Link>
                   <span className="text-ink/60">{s.kelas?.nama ?? "-"}</span>
@@ -159,7 +159,7 @@ export default async function DashboardPage() {
         <div className="grid gap-4 sm:grid-cols-2">
           {anak.map((a) => (
             <Card key={a.id}>
-              <h2 className="font-bold text-primary-dark">{a.nama}</h2>
+              <h2 className="font-bold text-heading">{a.nama}</h2>
               <p className="text-sm text-ink/70">{a.kelas?.nama ?? "Belum ada kelas"}</p>
             </Card>
           ))}
@@ -167,8 +167,8 @@ export default async function DashboardPage() {
       )}
       <Card>
         <div className="mb-3 flex items-center justify-between">
-          <h2 className="font-bold text-primary-dark">Hafalan terbaru</h2>
-          <Link href="/dashboard/perkembangan" className="text-sm font-semibold text-primary underline">
+          <h2 className="font-bold text-heading">Hafalan terbaru</h2>
+          <Link href="/dashboard/perkembangan" className="text-sm font-semibold text-accent underline">
             Lihat perkembangan
           </Link>
         </div>
@@ -178,7 +178,7 @@ export default async function DashboardPage() {
           <ul className="divide-y divide-primary/10">
             {terbaru.map((h) => (
               <li key={h.id} className="flex items-center justify-between gap-3 py-2 text-sm">
-                <span className="min-w-0 break-words">
+                <span className="min-w-0 wrap-break-word">
                   <span className="font-medium">{h.santri?.nama}</span>
                   <span dir="auto" className="ml-2 font-arab text-lg">{h.materi}</span>
                 </span>

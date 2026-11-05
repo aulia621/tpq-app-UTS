@@ -79,7 +79,7 @@ export default async function Home() {
     <>
       <a
         href="#konten-utama"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:font-semibold focus:text-primary-dark focus:shadow-lg"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-lg focus:bg-surface focus:px-4 focus:py-3 focus:font-semibold focus:text-heading focus:shadow-lg"
       >
         Lewati ke konten utama
       </a>
@@ -166,7 +166,7 @@ export default async function Home() {
 
           {metrics && (
             <section aria-labelledby="ringkasan">
-              <h2 id="ringkasan" className="mb-4 text-2xl font-bold text-primary-dark">
+              <h2 id="ringkasan" className="mb-4 text-2xl font-bold text-heading">
                 Ringkasan
               </h2>
               <div className="grid gap-4 sm:grid-cols-3">
@@ -175,7 +175,7 @@ export default async function Home() {
                 <Metric label="Catatan hafalan" value={metrics.hafalan} />
               </div>
               {pengumuman.length > 0 && (
-                <ul className="mt-4 divide-y divide-primary/10 rounded-card border border-primary/10 bg-white px-5">
+                <ul className="mt-4 divide-y divide-primary/10 rounded-card border border-primary/10 bg-surface px-5">
                   {pengumuman.map((p) => (
                     <li key={p.id} className="flex justify-between gap-3 py-3 text-sm">
                       <span className="wrap-break-word">{p.judul}</span>
@@ -188,13 +188,13 @@ export default async function Home() {
           )}
 
           <section id="fitur" aria-labelledby="fitur-judul" className="scroll-mt-20">
-            <h2 id="fitur-judul" className="mb-4 text-2xl font-bold text-primary-dark">
+            <h2 id="fitur-judul" className="mb-4 text-2xl font-bold text-heading">
               Fitur utama
             </h2>
             <div className="grid gap-4 sm:grid-cols-3">
               {FEATURES.map((f) => (
-                <div key={f.title} className="rounded-card border border-white/60 bg-white/70 p-5 shadow-sm backdrop-blur-md">
-                  <h3 className="font-bold text-primary-dark">{f.title}</h3>
+                <div key={f.title} className="rounded-card border border-primary/10 bg-surface/70 p-5 shadow-sm backdrop-blur-md">
+                  <h3 className="font-bold text-heading">{f.title}</h3>
                   <p className="mt-2 text-sm text-ink/80">{f.text}</p>
                 </div>
               ))}
@@ -202,13 +202,13 @@ export default async function Home() {
           </section>
 
           <section aria-labelledby="arsitektur">
-            <h2 id="arsitektur" className="mb-4 text-2xl font-bold text-primary-dark">
+            <h2 id="arsitektur" className="mb-4 text-2xl font-bold text-heading">
               Arsitektur data
             </h2>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
               {TABLES.map((t) => (
-                <div key={t.name} className="rounded-card border border-primary/10 bg-white p-4">
-                  <p className="font-mono text-sm font-bold text-primary">{t.name}</p>
+                <div key={t.name} className="rounded-card border border-primary/10 bg-surface p-4">
+                  <p className="font-mono text-sm font-bold text-accent">{t.name}</p>
                   <p className="mt-1 text-xs text-ink/70">{t.text}</p>
                 </div>
               ))}

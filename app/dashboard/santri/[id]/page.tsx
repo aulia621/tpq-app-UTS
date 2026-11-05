@@ -45,7 +45,7 @@ export default async function DetailSantriPage({ params }: { params: Promise<{ i
   return (
     <>
       <nav aria-label="Breadcrumb" className="text-sm text-ink/70">
-        <Link href="/dashboard/santri" className="font-semibold text-primary underline">
+        <Link href="/dashboard/santri" className="font-semibold text-accent underline">
           Santri
         </Link>{" "}
         / <span aria-current="page">{santri.nama}</span>
@@ -66,11 +66,11 @@ export default async function DetailSantriPage({ params }: { params: Promise<{ i
       />
 
       <Card>
-        <h2 className="mb-3 font-bold text-primary-dark">Grafik nilai</h2>
+        <h2 className="mb-3 font-bold text-heading">Grafik nilai</h2>
         <ProgresChart data={chart} />
       </Card>
 
-      <h2 className="text-lg font-bold text-primary-dark">Riwayat hafalan</h2>
+      <h2 className="text-lg font-bold text-heading">Riwayat hafalan</h2>
       {rows.length === 0 ? (
         <EmptyState title="Belum ada catatan hafalan" />
       ) : (
